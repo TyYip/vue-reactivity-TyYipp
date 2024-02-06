@@ -1,15 +1,9 @@
-<template>
-  <div>
-
-  </div>
-</template>
-
-<script>
-  export default {
-    
-  }
+<script setup>
+import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
-<style scoped>
-
-</style>
+<template>
+  <main>
+    <TheWelcome />
+  </main>
+</template>

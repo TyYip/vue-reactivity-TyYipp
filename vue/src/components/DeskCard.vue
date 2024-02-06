@@ -1,27 +1,23 @@
 <template>
-    <div>
-        <DestCard v-for="destination in destination" :key="destination.name" :Destination="destination"/>>
-        <img :src="Destination.img" alt="">
-        <h2>{{ Destination.name }}</h2>
-        <h3>{{ Clicked }}</h3>
-        <button @clicked="increment">Click Me</button>
-    </div>
+<div id="app">
+  <button @click="count++">
+    Count is: {{ count }}
+  </button>
+</div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-const props = defineProps({
-    Destination: Object,
-});
+<script>
+import { createApp, ref } from 'vue'
 
-const clicked = ref(0);
-function increment() {
-    clicked++;
-}
+createApp({
+  setup() {
+    return {
+      count: ref(0)
+    }
+  }
+}).mount('#app')
 </script>
 
-
-
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
