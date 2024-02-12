@@ -1,23 +1,30 @@
 <template>
-<div id="app">
-  <button @click="count++">
-    Count is: {{ count }}
-  </button>
-</div>
+  <div>
+    <h1>Toppings</h1>
+    <h2>{{ Destination.name }}</h2>
+    <img :src="Destination.img" alt="" />
+    <h3>{{ clicked }}</h3>
+    <button @click="increment">Click Me</button>
+  </div>
 </template>
 
-<script>
-import { createApp, ref } from 'vue'
+<script setup>
+import { ref } from "vue";
+const props = defineProps({
+  Destination: Object,
+});
 
-createApp({
-  setup() {
-    return {
-      count: ref(0)
-    }
-  }
-}).mount('#app')
+//clicker logic
+let clicked = ref(0);
+function increment() {
+  clicked.value++;
+}
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
 </style>
