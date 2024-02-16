@@ -1,15 +1,19 @@
 <template>
-  <div>
+  <div class="container">
     <DestCard
       v-for="destination in destinations"
       :key="destination.name"
       :Destination="destination"
+      @click="handleCardClick"
     />
   </div>
 </template>
 
 <script setup>
 import DestCard from "@/components/DeskCard.vue";
+import { ref } from "vue";
+
+
 const destinations = [
   {
     name: "Black Beans",
@@ -97,6 +101,22 @@ const destinations = [
   },
 
 ];
+// Array to store clicked card names
+const clickedCards = ref([]);
+
+// Function to handle card click event
+function handleCardClick(cardName) {
+  clickedCards.value.push(cardName);
+  console.log(clickedCards.value);
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+}
+</style>

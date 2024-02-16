@@ -9,6 +9,7 @@
 </template>
 
 <script setup>
+let list = []
 import { ref } from "vue";
 const props = defineProps({
   Destination: Object,
@@ -18,16 +19,23 @@ const props = defineProps({
 let clicked = ref(0);
 function increment() {
   clicked.value++;
+  list.push(props.Destination.name);
+  console.log(list);
 }
 </script>
 
 <style scoped>
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
 img {
   width: 250px;
   height: 300px;
   object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>
