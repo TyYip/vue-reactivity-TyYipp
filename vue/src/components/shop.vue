@@ -59,7 +59,7 @@
   }
   
   .upgrade-info p {
-    margin: 1px 0;
+    margin: 1.1px 0;
   }
   
   .btn {

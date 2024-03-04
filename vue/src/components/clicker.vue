@@ -93,7 +93,7 @@ export default {
   justify-content: center;
   width: 50%; 
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 20.1px; 
 }
   
 .text {
