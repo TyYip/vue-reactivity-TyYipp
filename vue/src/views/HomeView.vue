@@ -19,6 +19,7 @@ import clicker from '../components/clicker.vue'
   text-align: center;
   color: #FF6EC7;
   font-size: 70px;
+
   margin-bottom: 20px;
 }
 .box {
